@@ -46,7 +46,7 @@ string infixToPostfix(string s){
             st.pop();
         }
         else{
-            while(!st.empty() && precedence(st.top()) > precedence(s[i])){
+            while(!st.empty() && st.top() != '(' && precedence(st.top()) >= precedence(s[i])){
                 ans += st.top();
                 st.pop();
             }
